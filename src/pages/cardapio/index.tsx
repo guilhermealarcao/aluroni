@@ -7,6 +7,11 @@ export default function Cardapio() {
             <nav className={stlyes.menu}>
                 <Logo />
             </nav>
+            <header className={stlyes.header}>
+                <div className={stlyes.header__text}>
+                    Casa da massa do código
+                </div>
+            </header>
         </main>
     )
 }
