@@ -2,6 +2,7 @@ import styles from "./Ordenador.module.scss";
 import valores from './opcoes.json';
 import { useState } from "react";
 import classNames from 'classnames';
+import {M} from 'react-icons';
 
 type IItem = typeof valores[0];
 
