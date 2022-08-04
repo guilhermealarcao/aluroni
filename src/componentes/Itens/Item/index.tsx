@@ -9,7 +9,7 @@ export default function Item(props: Props) {
     const { title, description, price, size, category, photo, serving } = props;
 
     return (
-        <div>
+        <div className={styles.item}>
             <div>
                 <img src={photo} alt={title} />
             </div>

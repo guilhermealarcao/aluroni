@@ -31,8 +31,8 @@ export default function Cardapio() {
                     <Filtro filtro={filtro} setFiltro={setFiltro} />
                     <Ordenador ordenador={ordenador} setOrdenador={(valor) => setOrdenador(valor)} />
                 </div>
+                <Itens busca={texto} filtro={filtro} ordenador={ordenador} />
             </section>
-            <Itens />
         </main>
     )
 }
