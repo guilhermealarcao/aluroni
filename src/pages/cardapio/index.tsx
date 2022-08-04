@@ -1,28 +1,33 @@
-import stlyes from "./Cardapio.module.scss";
+import styles from "./Cardapio.module.scss";
 import { ReactComponent as Logo } from "assets/logo.svg";
 import Buscador from "componentes/Buscador";
 import { useState } from "react";
+import Filtro from "componentes/Filtro";
+import Ordenador from "componentes/Ordenador";
 
 export default function Cardapio() {
 
     const [texto, setTexto] = useState('');
 
+    const [filtro, setFiltro] = useState<number | null>(null);
+
     return (
         <main>
-            <nav className={stlyes.menu}>
+            <nav className={styles.menu}>
                 <Logo />
             </nav>
-            <header className={stlyes.header}>
-                <div className={stlyes.header__text}>
+            <header className={styles.header}>
+                <div className={styles.header__text}>
                     Casa da massa do código
                 </div>
             </header>
-            <section>
-                <h3 className={stlyes.cardapio__titulo}>Cardápio</h3>
-                <Buscador 
-                    busca={texto} 
-                    setBusca={setTexto}
-                />
+            <section className={styles.cardapio}>
+                <h3 className={styles.cardapio__titulo}>Cardápio</h3>
+                <Buscador busca={texto} setBusca={setTexto} />
+                <div className={styles.cardapio__filtros}>
+                    <Filtro filtro={filtro} setFiltro={setFiltro} />
+                    <Ordenador  />
+                </div>
             </section>
         </main>
     )
