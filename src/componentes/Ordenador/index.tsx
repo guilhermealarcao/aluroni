@@ -2,7 +2,7 @@ import styles from "./Ordenador.module.scss";
 import valores from './opcoes.json';
 import { useState } from "react";
 import classNames from 'classnames';
-import {M} from 'react-icons';
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 type IItem = typeof valores[0];
 
@@ -31,7 +31,8 @@ export default function Ordernador({ ordenador, setOrdenador }: Props) {
             onBlur={() => setAberto(false)}
 
         >
-            <span>{ ordenadoText || "Ordernador por"}</span>
+            <span>{ ordenadoText || "Ordernador por"} </span>
+            {aberto ? <MdKeyboardArrowUp size={20} /> : <MdKeyboardArrowDown size={20} /> }
             <div className={classNames({
                 [styles.ordenador__options]: true,
                 [styles['ordenador__options--ativo']]: aberto
